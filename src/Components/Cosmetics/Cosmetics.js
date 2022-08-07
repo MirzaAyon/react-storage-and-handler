@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Cosmetic from '../Cosmetic/Cosmetic';
 // import add from '../Utilities/Calculate';
 //eta default theke import korar system
-import { add } from '../Utilities/Calculate';
+import { add, getTotal } from '../Utilities/Calculate';
 //eta ekdhik export theke import korar system
 //object hishebe pathale import evabe hbe 
 
@@ -55,11 +55,13 @@ const Cosmetics = () => {
     }, [])
     const first = 55;
     const second = 66;
-    const total = add(first, second)
+    // const total = add(first, second)
     //add likhe kichu khon wait korlei export er option ashbe 
+    const total = getTotal(cosmetics);
     return (
         <div>
             <h1>Welcome to my cosmetics store</h1>
+            <p>Money needed: {total}</p>
             <p>total: {total}</p>
             {
                 // cosmetics.map(cosmetic => console.log(cosmetic))
